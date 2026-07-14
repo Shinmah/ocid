@@ -3,7 +3,7 @@ name: OCI Free Tier Retry
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # toutes les 15 minutes
+    - cron: "7,22,37,52 * * * *"   
   workflow_dispatch: {}        # bouton "Run workflow" manuel dans l'UI GitHub
 
 jobs:
