@@ -27,7 +27,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PUBLIC_KEY }}" > ~/.ssh/id_rsa.pub
 
-      - name: Tentative de création d'instance
+      - name: Tentative de création dinstance
         env:
           OCI_USER_OCID: ${{ secrets.OCI_USER_OCID }}
           OCI_CLI_KEY_CONTENT: ${{ secrets.OCI_CLI_KEY_CONTENT }}
@@ -41,4 +41,6 @@ jobs:
           OCI_SSH_KEY_PATH: /home/runner/.ssh/id_rsa.pub
           MAX_ATTEMPTS: "3"
           RETRY_INTERVAL: "90"
+          OCI_OCPUS: "2"
+          OCI_MEMORY: "12"
         run: python oci_retry.py
